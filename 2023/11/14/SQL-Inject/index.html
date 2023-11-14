@@ -23,15 +23,15 @@
 <meta property="og:site_name" content="ex0c_blogs">
 <meta property="og:description" content="SQL-Inject123456789101112131415161718192021222324252627system_user() 系统用户名user() 用户名current_user() 当前用户名session_user() 连接数据库的用户名database() 数据库名version() 版本load_file() 读取本地文件的函数@@datadir 读取数据库路径@@based">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ex0c.github.io/public/img/image-20231106161419700.png">
+<meta property="og:image" content="https://ex0c.github.io/blogs/image-20231106161419700.png">
 <meta property="og:image" content="https://ex0c.github.io/blogs/image-20231106194902578.png">
 <meta property="og:image" content="https://ex0c.github.io/blogs/image-20231106195502417.png">
 <meta property="og:image" content="https://ex0c.github.io/blogs/image-20231106195845877.png">
 <meta property="article:published_time" content="2023-11-14T02:48:50.000Z">
-<meta property="article:modified_time" content="2023-11-14T03:00:27.555Z">
+<meta property="article:modified_time" content="2023-11-14T03:15:25.930Z">
 <meta property="article:author" content="ex0c">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ex0c.github.io/public/img/image-20231106161419700.png">
+<meta name="twitter:image" content="https://ex0c.github.io/blogs/image-20231106161419700.png">
   
   
   
@@ -444,7 +444,7 @@
 <li><p><code>union</code>特性猜列数</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">from</span> users <span class="hljs-keyword">where</span> id<span class="hljs-operator">=</span><span class="hljs-number">1</span><span class="hljs-string">&#x27; union select 1,2,3--+  union进行联合查询的时候 需要保证前后语句的列数一样，因此根据这个特性可以判断列数 当我们使前置查询的结果错误的时候 就会显示后置查询的结果 根据页面反馈的信息 在对应的字段处执行sql语句 ，理论是1，2，3三个位置都能执行sql语句 如下图  但是我们需要页面将信息回显 因此在执行回显的位置执行sql语句即可</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="/blogs/../../public/img/image-20231106161419700.png" srcset="/blogs/img/loading.gif" lazyload></p>
+<p><img src="/blogs/image-20231106161419700.png" srcset="/blogs/img/loading.gif" lazyload></p>
 </li>
 <li><pre><code class="sql">select * from users where id=1&#39; union select 1,2,3--+ 页面回显正常
 elect * from users where id=-1&#39; union select 1,2,3--+ 页面回显正常 由于前置语句错误将后置语句的注入点显示出来
